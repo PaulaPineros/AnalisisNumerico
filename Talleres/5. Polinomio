@@ -1,0 +1,72 @@
+multiplicar = function(numero, veces){
+  acumulado = 0
+  if(veces < 0){
+    veces = veces * - 1
+  }
+  if(numero < 0){
+    numero = numero * -1
+  }
+  for( i in 1:veces){
+    acumulado = acumulado + numero
+  }
+  return(acumulado)
+}
+
+potencia = function(numero, potencia){
+  acumulado = numero
+  p = potencia - 1
+  if(p>0){  
+    for(i in 1:p){
+      acumulado = multiplicar(acumulado, numero)
+    }
+  }
+  return (acumulado)
+}
+
+polinomio = function (grado, numero){
+  coeficientes = c()
+  x = 0
+  j = grado
+  m = grado + 1
+  for( i in 1:m){
+    cat("coeficiente de x^ ")
+    cat(j)
+    cat(": ", "\n")
+    x = as.integer(readline(prompt = ""))
+    coeficientes[i] = x
+    j = j - 1
+  }
+  j = grado
+  for(i in 1:m){
+    k = coeficientes[i]
+    if(k != 0){
+      cat(k, "x^", j )
+      if(i != m){
+        cat(" + ")
+      }
+    }
+    j = j -1
+  }
+  
+  g = grado + 1
+  acum = coeficientes[g]
+  g = grado
+  for(i in 1:grado){
+    suma = 0
+    k = coeficientes[i]
+    if(k != 0){
+      for(j in 1:k){
+        suma = suma + potencia(numero,g)
+      }
+      if(k > 0){
+        acum = acum + suma
+      }
+      else{
+        acum = acum - suma
+      }
+    }
+    g = g - 1
+  }
+  cat("\n")
+  return(acum)
+}
