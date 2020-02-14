@@ -25,3 +25,7 @@ raizCuadrada = function(dato, errorP)
   
   return (inicial)
 }
+
+num = 7
+error = 0.00001
+raizCuadrada(num, error)
