@@ -43,5 +43,8 @@ errorRe = function(numero,decimales){
   return(error)
 }
 
+num = 536.78
+cifras = 4
+errorRe(num, cifras)
 
 
