@@ -17,6 +17,6 @@ metodoHorner = function (polinomio, x0){
   cat ("Numero de Multiplicaciones:", multiplicaciones,"\n")
 }
 
-x0 = 3
+x0 = -2
 polinomio <- c(2,0,-3,3,-4)
 metodoHorner (polinomio, x0)
