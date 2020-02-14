@@ -1,0 +1,10 @@
+distanciaE = function(velocidad, errorV, tiempo, errorT){
+  
+  distancia = velocidad * tiempo
+  errorA = (velocidad * errorT) + (tiempo * errorV)
+  cat("Error absoluto: ", errorA, "\n")
+  
+  errorR = (errorV/ velocidad) + (errorT/ tiempo)
+  errorR = errorR * 100
+  cat("Error relativo: ", errorR, "%")
+}
