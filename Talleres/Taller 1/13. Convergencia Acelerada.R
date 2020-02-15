@@ -12,12 +12,17 @@ con2 = function(n)
 fin = 10
 n=1
 convergencia = c(1:(fin-1))
+convergencia2= c(1:(fin-1))
 while (n<fin)
 {
   
-  convergencia[n]=con2(n)
+  convergencia[n]=con1(n)
+  convergencia2[n]=con2(n)
+  
   n=n+1
   
 }
 print(convergencia)
-plot(convergencia, type = 'l')
+plot(convergencia,type="o",xlab="n",ylab = "Xn",main = "convergencia normal")
+par(mfrow=c(2,2))
+plot(convergencia2,type="o",xlab="n",ylab = "Xn",main=" Convergencia Acelerada")
